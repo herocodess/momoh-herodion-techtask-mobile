@@ -1,6 +1,8 @@
+import 'package:dartz/dartz.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:tech_task/app/modules/ingredients/domain/ingredients_repository.dart';
 import 'package:tech_task/app/shared/api_client.dart';
+import 'package:tech_task/core/error/failure.dart';
 
 final ingredientsRepositoryProvider = Provider(
   (ref) => IngredientsRepositoryImpl(
@@ -14,7 +16,7 @@ class IngredientsRepositoryImpl implements IngredientsRepository {
   IngredientsRepositoryImpl(this.client);
 
   @override
-  Future<List> getIngredients() async {
+  Future<Either<Failure, List>> getIngredients() async {
     throw UnimplementedError();
   }
 
