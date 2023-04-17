@@ -39,7 +39,6 @@ class _SlideToGetStartedWidgetState extends State<SlideToGetStartedWidget>
 
   onDragUpdate(DragUpdateDetails details) {
     double delta = details.primaryDelta / maxSlide;
-    print('stuff');
     setState(() {
       _controller.value += delta;
     });

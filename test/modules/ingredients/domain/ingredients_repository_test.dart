@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:tech_task/app/modules/ingredients/domain/ingredients_repository.dart';
+import 'package:tech_task/app/shared/models/ingredients_model.dart';
 import 'package:tech_task/core/error/failure.dart';
 
 import 'ingredients_repository_test.mock.dart';
@@ -15,8 +16,8 @@ void main() {
 
   test('Fetch all ingredients error state', () async {
     when(() => ingredientsRepository.getIngredients()).thenAnswer(
-      (_) async =>
-          Left<Failure, List<dynamic>>(Failure('Something went wrong')),
+      (_) async => Left<Failure, List<IngredientsModel>>(
+          Failure('Something went wrong')),
     );
     final result = await ingredientsRepository.getIngredients();
     result.fold((l) {
@@ -29,12 +30,12 @@ void main() {
 
   test('Fetch all ingredients success state', () async {
     when(() => ingredientsRepository.getIngredients()).thenAnswer(
-      (_) async => Right<Failure, List<dynamic>>([]),
+      (_) async => Right<Failure, List<IngredientsModel>>([]),
     );
     final result = await ingredientsRepository.getIngredients();
     result.fold((l) {}, (r) {
-      expect(r, isA<List<dynamic>>());
-      expect(r, <dynamic>[]);
+      expect(r, isA<List<IngredientsModel>>());
+      expect(r, <IngredientsModel>[]);
     });
 
     verify(() => ingredientsRepository.getIngredients()).called(1);

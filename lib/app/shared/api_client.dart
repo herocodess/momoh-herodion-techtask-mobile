@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:riverpod/riverpod.dart';
 
 final apiClientProvider = Provider((ref) => ApiClient());
@@ -6,7 +7,13 @@ final apiClientProvider = Provider((ref) => ApiClient());
 class ApiClient {
   final Dio _dio;
 
-  ApiClient() : _dio = Dio();
+  ApiClient()
+      : _dio = Dio(
+          BaseOptions(
+            baseUrl: dotenv.env['BASE_URL'],
+            connectTimeout: 15000,
+          ),
+        );
 
   Future<Response> get(String path) async {
     try {
