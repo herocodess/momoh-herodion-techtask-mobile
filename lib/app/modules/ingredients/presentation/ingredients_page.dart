@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tech_task/app/modules/providers/recipe_provider.dart';
+import 'package:tech_task/app/modules/recipe/presentation/recipe_list_page.dart';
 import 'package:tech_task/app/shared/helpers/color_constants.dart';
 import 'package:tech_task/app/shared/models/ingredients_model.dart';
 import 'package:tech_task/app/shared/navigation/navigation.dart';
@@ -41,9 +42,12 @@ class _IngredientsPageState extends ConsumerState<IngredientsPage> {
                         print(error);
                       },
                       onSuccess: (data) {
-                        for (var i = 0; i < data.length; i++) {
-                          print(data[i].title);
-                        }
+                        RouteNavigators.route(
+                          context,
+                          RecipeListPage(
+                            recipes: data,
+                          ),
+                        );
                       },
                     );
                   },
