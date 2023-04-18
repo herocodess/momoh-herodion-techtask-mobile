@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tech_task/app/modules/ingredients/presentation/select_time_page.dart';
-import 'package:tech_task/app/shared/navigation/navigation.dart';
+import 'package:tech_task/core/navigation/navigation.dart';
 import 'package:tech_task/app/shared/theme.dart';
 
 class SplashScreen extends StatefulWidget {

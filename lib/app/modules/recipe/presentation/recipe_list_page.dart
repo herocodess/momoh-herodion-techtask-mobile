@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tech_task/app/modules/recipe/presentation/recipe_page.dart';
 import 'package:tech_task/app/shared/helpers/color_constants.dart';
 import 'package:tech_task/app/shared/models/recipe_model.dart';
-import 'package:tech_task/app/shared/navigation/navigation.dart';
+import 'package:tech_task/core/navigation/navigation.dart';
 import 'package:tech_task/app/shared/theme.dart';
 
 class RecipeListPage extends StatefulWidget {

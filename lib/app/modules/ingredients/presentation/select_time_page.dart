@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tech_task/app/modules/ingredients/presentation/ingredients_page.dart';
 import 'package:tech_task/app/modules/providers/ingredients_provider.dart';
 import 'package:tech_task/app/shared/helpers/color_constants.dart';
-import 'package:tech_task/app/shared/navigation/navigation.dart';
+import 'package:tech_task/core/navigation/navigation.dart';
 import 'package:tech_task/app/shared/theme.dart';
 import 'package:tech_task/app/shared/widgets/slide_to_get_started_widget.dart';
 
@@ -16,6 +16,7 @@ class SelectTimePage extends ConsumerStatefulWidget {
 }
 
 class _SelectTimePageState extends ConsumerState<SelectTimePage> {
+  var selectedDate;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +46,9 @@ class _SelectTimePageState extends ConsumerState<SelectTimePage> {
                 initialDateTime: DateTime.now(),
                 minimumDate: DateTime.now().subtract(Duration(days: 1)),
                 mode: CupertinoDatePickerMode.date,
-                onDateTimeChanged: (_) {},
+                onDateTimeChanged: (_) {
+                  selectedDate = _;
+                },
                 maximumDate: DateTime.now().add(Duration(days: 30)),
               ),
             ),
