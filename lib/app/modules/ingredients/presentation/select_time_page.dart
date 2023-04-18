@@ -3,8 +3,10 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tech_task/app/modules/ingredients/presentation/ingredients_page.dart';
 import 'package:tech_task/app/modules/providers/ingredients_provider.dart';
 import 'package:tech_task/app/shared/helpers/color_constants.dart';
+import 'package:tech_task/app/shared/navigation/navigation.dart';
 import 'package:tech_task/app/shared/theme.dart';
 import 'package:tech_task/app/shared/widgets/slide_to_get_started_widget.dart';
 
@@ -74,6 +76,14 @@ class _SelectTimePageState extends ConsumerState<SelectTimePage> {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(error.toString()),
+              ),
+            );
+          },
+          onSuccess: (data) {
+            RouteNavigators.route(
+              context,
+              IngredientsPage(
+                ingredients: data,
               ),
             );
           },

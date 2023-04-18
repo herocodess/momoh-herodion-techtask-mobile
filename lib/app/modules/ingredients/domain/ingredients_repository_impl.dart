@@ -26,17 +26,5 @@ class IngredientsRepositoryImpl implements IngredientsRepository {
     } catch (e) {
       return Left(Failure(e.toString()));
     }
-    // return response
-    //     .then(
-    //       (value) => Right(value
-    //           .map<IngredientsModel>((e) => IngredientsModel.fromJson(e))
-    //           .toList()),
-    //     )
-    //     .catchError((e) => Left(ServerFailure()));
-  }
-
-  @override
-  Future getRecipe(List ingredients) async {
-    throw UnimplementedError();
   }
 }

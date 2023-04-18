@@ -4,6 +4,4 @@ import 'package:tech_task/core/error/failure.dart';
 
 abstract class IngredientsRepository {
   Future<Either<Failure, List<IngredientsModel>>> getIngredients();
-
-  Future getRecipe(List ingredients);
 }

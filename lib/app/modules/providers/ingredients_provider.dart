@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:riverpod/riverpod.dart';
@@ -20,15 +19,17 @@ class IngredientsProvider
   final IngredientsRepository ingredientsRepository;
   IngredientsProvider(this.ingredientsRepository) : super(AsyncValue.data([]));
 
-  Future<void> getIngredients({ValueChanged<String> onError}) async {
+  Future<void> getIngredients(
+      {ValueChanged<String> onError,
+      ValueChanged<List<IngredientsModel>> onSuccess}) async {
     state = const AsyncValue.loading();
     final ingredients = await ingredientsRepository.getIngredients();
     ingredients.fold((l) {
       state = AsyncValue.error(l, StackTrace.current);
       onError(l.message);
     }, (r) {
-      log('data here $r');
       state = AsyncValue.data(r);
+      onSuccess(r);
     });
   }
 }

@@ -40,15 +40,4 @@ void main() {
 
     verify(() => ingredientsRepository.getIngredients()).called(1);
   });
-
-  test('Fetch recipe', () async {
-    when(() => ingredientsRepository.getRecipe([])).thenAnswer(
-      (_) async => [],
-    );
-    expect(
-      await ingredientsRepository.getRecipe([]),
-      [],
-    );
-    verify(() => ingredientsRepository.getRecipe([])).called(1);
-  });
 }
