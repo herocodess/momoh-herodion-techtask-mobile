@@ -16,8 +16,9 @@ class _RecipePageState extends State<RecipePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: Key('recipe-page'),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: whiteColor,
         elevation: 0,
         leading: IconButton(
           onPressed: () => RouteNavigators.pop(context),

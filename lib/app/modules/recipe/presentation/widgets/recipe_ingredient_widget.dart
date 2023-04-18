@@ -34,10 +34,9 @@ class RecipeIngredientWidget extends StatelessWidget {
             const SizedBox(width: 20),
             Text(
               title,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+              style: appTheme.textTheme.bodyLarge.copyWith(
+                color: blackColor,
+                fontWeight: FontWeight.w700,
               ),
             ),
           ],

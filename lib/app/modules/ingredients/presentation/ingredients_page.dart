@@ -27,11 +27,13 @@ class _IngredientsPageState extends ConsumerState<IngredientsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: Key('ingredients-page'),
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(20),
         child: ref.watch(recipeProvider).when(
               data: (data) {
                 return MainButtonWidget(
+                  key: Key('main-button'),
                   text: 'Continue',
                   onPressed: () {
                     ref.read(recipeProvider.notifier).getRecipes(
@@ -96,6 +98,7 @@ class _IngredientsPageState extends ConsumerState<IngredientsPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CheckboxListTile(
+                    key: Key('ingredient-$index'),
                     value: widget.ingredients[index].useBy.isBefore(
                           DateTime.now(),
                         ) &&

@@ -17,6 +17,7 @@ class _RecipeListPageState extends State<RecipeListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: Key('recipe-list-page'),
         appBar: AppBar(
           backgroundColor: whiteColor,
           elevation: 0,
@@ -47,6 +48,7 @@ class _RecipeListPageState extends State<RecipeListPage> {
                     .split(']')
                     .first;
                 return GestureDetector(
+                  key: Key('recipe-$index'),
                   onTap: () {
                     RouteNavigators.route(
                       context,

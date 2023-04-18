@@ -20,6 +20,7 @@ class _SelectTimePageState extends ConsumerState<SelectTimePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: Key('select-time-page'),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
         child: Column(
@@ -35,6 +36,7 @@ class _SelectTimePageState extends ConsumerState<SelectTimePage> {
             ),
             SizedBox(height: 50),
             Container(
+              key: Key('date-picker'),
               height: 250,
               decoration: BoxDecoration(
                 border: Border.all(color: blackColor, width: 1.3),
@@ -70,6 +72,7 @@ class _SelectTimePageState extends ConsumerState<SelectTimePage> {
 
   SlideToGetStartedWidget slider(BuildContext context) {
     return SlideToGetStartedWidget(
+      key: Key('slide-to-get-started-widget'),
       onConfirm: () {
         ref.read(ingredientsProvider.notifier).getIngredients(
           onError: (error) {

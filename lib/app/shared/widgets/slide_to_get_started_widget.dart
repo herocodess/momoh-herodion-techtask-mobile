@@ -62,8 +62,9 @@ class _SlideToGetStartedWidgetState extends State<SlideToGetStartedWidget>
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
+      key: widget.key,
       child: Container(
-        width: 200,
+        width: 250,
         child: Row(
           children: [
             Stack(
@@ -109,6 +110,7 @@ class _SlideToGetStartedWidgetState extends State<SlideToGetStartedWidget>
                       );
                     },
                     child: GestureDetector(
+                      key: Key('gesture'),
                       onHorizontalDragUpdate: onDragUpdate,
                       onHorizontalDragEnd: onDragEnd,
                       child: AnimatedContainer(

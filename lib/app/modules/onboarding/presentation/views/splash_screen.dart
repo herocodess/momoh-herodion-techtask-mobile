@@ -22,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: Key('splash'),
       body: Container(
         width: double.maxFinite,
         height: double.maxFinite,

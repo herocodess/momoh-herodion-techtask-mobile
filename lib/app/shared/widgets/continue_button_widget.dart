@@ -16,6 +16,7 @@ class _MainButtonWidgetState extends State<MainButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      key: widget.key,
       onTap: widget.onPressed,
       child: Container(
         height: 70,
