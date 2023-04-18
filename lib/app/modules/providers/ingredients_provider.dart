@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:riverpod/riverpod.dart';
@@ -26,6 +27,7 @@ class IngredientsProvider
     final ingredients = await ingredientsRepository.getIngredients();
     ingredients.fold((l) {
       state = AsyncValue.error(l, StackTrace.current);
+      log('message: ${l.runtimeType}');
       onError(l.message);
     }, (r) {
       state = AsyncValue.data(r);

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -72,7 +70,6 @@ class _SelectTimePageState extends ConsumerState<SelectTimePage> {
       onConfirm: () {
         ref.read(ingredientsProvider.notifier).getIngredients(
           onError: (error) {
-            log('error: $error');
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(error.toString()),

@@ -15,9 +15,9 @@ class ApiClient {
           ),
         );
 
-  Future<Response> get(String path) async {
+  Future<Response> get(String path, {dynamic queryParameters}) async {
     try {
-      final response = await _dio.get(path);
+      final response = await _dio.get(path, queryParameters: queryParameters);
       return response;
     } on DioError catch (e) {
       throw e;

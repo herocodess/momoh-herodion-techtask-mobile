@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tech_task/app/modules/providers/recipe_provider.dart';
 import 'package:tech_task/app/shared/helpers/color_constants.dart';
 import 'package:tech_task/app/shared/models/ingredients_model.dart';
 import 'package:tech_task/app/shared/navigation/navigation.dart';
 import 'package:tech_task/app/shared/widgets/continue_button_widget.dart';
 
-class IngredientsPage extends StatefulWidget {
+class IngredientsPage extends ConsumerStatefulWidget {
   const IngredientsPage({Key key, this.ingredients}) : super(key: key);
   final List<IngredientsModel> ingredients;
 
   @override
-  State<IngredientsPage> createState() => _IngredientsPageState();
+  ConsumerState<IngredientsPage> createState() => _IngredientsPageState();
 }
 
-class _IngredientsPageState extends State<IngredientsPage> {
+class _IngredientsPageState extends ConsumerState<IngredientsPage> {
   @override
   void initState() {
     super.initState();
@@ -26,10 +28,34 @@ class _IngredientsPageState extends State<IngredientsPage> {
     return Scaffold(
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(20),
-        child: MainButtonWidget(
-          text: 'Continue',
-          onPressed: () {},
-        ),
+        child: ref.watch(recipeProvider).when(
+              data: (data) {
+                return MainButtonWidget(
+                  text: 'Continue',
+                  onPressed: () {
+                    ref.read(recipeProvider.notifier).getRecipes(
+                      selectedIngredientsMap
+                          .map((e) => e.values.first)
+                          .toList(),
+                      onError: (error) {
+                        print(error);
+                      },
+                      onSuccess: (data) {
+                        for (var i = 0; i < data.length; i++) {
+                          print(data[i].title);
+                        }
+                      },
+                    );
+                  },
+                );
+              },
+              error: (error, stackTrace) {
+                return Text(error.toString());
+              },
+              loading: () => Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
