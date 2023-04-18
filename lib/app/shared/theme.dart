@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tech_task/app/shared/helpers/color_constants.dart';
+import 'package:recipe_app/app/shared/helpers/color_constants.dart';
 
 final ThemeData appTheme = ThemeData(
   primaryColor: whiteColor,

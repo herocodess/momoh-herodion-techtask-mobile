@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:riverpod/riverpod.dart';
-import 'package:tech_task/app/modules/providers/recipe_provider.dart';
+import 'package:recipe_app/app/modules/providers/recipe_provider.dart';
 
 import 'get_recipe_provider_test.mock.dart';
 

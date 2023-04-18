@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tech_task/app/modules/recipe/presentation/recipe_page.dart';
-import 'package:tech_task/app/shared/helpers/color_constants.dart';
-import 'package:tech_task/app/shared/models/recipe_model.dart';
-import 'package:tech_task/core/navigation/navigation.dart';
-import 'package:tech_task/app/shared/theme.dart';
+import 'package:recipe_app/app/modules/recipe/presentation/recipe_page.dart';
+import 'package:recipe_app/app/shared/helpers/color_constants.dart';
+import 'package:recipe_app/app/shared/models/recipe_model.dart';
+import 'package:recipe_app/core/navigation/navigation.dart';
+import 'package:recipe_app/app/shared/theme.dart';
 
 class RecipeListPage extends StatefulWidget {
   const RecipeListPage({Key key, this.recipes}) : super(key: key);

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:riverpod/riverpod.dart';
-import 'package:tech_task/app/modules/ingredients/domain/ingredients_repository.dart';
-import 'package:tech_task/app/shared/api_client.dart';
-import 'package:tech_task/app/shared/models/ingredients_model.dart';
-import 'package:tech_task/core/error/failure.dart';
+import 'package:recipe_app/app/modules/ingredients/domain/ingredients_repository.dart';
+import 'package:recipe_app/app/shared/api_client.dart';
+import 'package:recipe_app/app/shared/models/ingredients_model.dart';
+import 'package:recipe_app/core/error/failure.dart';
 
 final ingredientsRepositoryProvider = Provider(
   (ref) => IngredientsRepositoryImpl(

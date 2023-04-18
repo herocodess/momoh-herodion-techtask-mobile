@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tech_task/app/shared/helpers/color_constants.dart';
+import 'package:recipe_app/app/shared/helpers/color_constants.dart';
 
-class SlideToGetStartedWidget extends StatefulWidget {
+class SlideToBookLunchWidget extends StatefulWidget {
   final VoidCallback onConfirm;
   final Widget confirmWidget;
 
-  const SlideToGetStartedWidget({Key key, this.onConfirm, this.confirmWidget})
+  const SlideToBookLunchWidget({Key key, this.onConfirm, this.confirmWidget})
       : super(key: key);
 
   @override
-  _SlideToGetStartedWidgetState createState() =>
-      _SlideToGetStartedWidgetState();
+  _SlideToBookLunchWidgetState createState() => _SlideToBookLunchWidgetState();
 }
 
-class _SlideToGetStartedWidgetState extends State<SlideToGetStartedWidget>
+class _SlideToBookLunchWidgetState extends State<SlideToBookLunchWidget>
     with TickerProviderStateMixin {
   AnimationController _controller;
-  double maxSlide = 135;
+  double maxSlide = 170;
 
   @override
   void initState() {
@@ -88,7 +87,7 @@ class _SlideToGetStartedWidgetState extends State<SlideToGetStartedWidget>
                         ),
                       ),
                       Text(
-                        'Get started',
+                        'Book Lunch',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: whiteColor,

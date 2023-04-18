@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tech_task/app/modules/ingredients/presentation/ingredients_page.dart';
-import 'package:tech_task/app/modules/providers/ingredients_provider.dart';
-import 'package:tech_task/app/shared/helpers/color_constants.dart';
-import 'package:tech_task/core/navigation/navigation.dart';
-import 'package:tech_task/app/shared/theme.dart';
-import 'package:tech_task/app/shared/widgets/slide_to_get_started_widget.dart';
+import 'package:recipe_app/app/modules/ingredients/presentation/ingredients_page.dart';
+import 'package:recipe_app/app/modules/providers/ingredients_provider.dart';
+import 'package:recipe_app/app/shared/helpers/color_constants.dart';
+import 'package:recipe_app/core/navigation/navigation.dart';
+import 'package:recipe_app/app/shared/theme.dart';
+import 'package:recipe_app/app/shared/widgets/slide_to_get_started_widget.dart';
 
 class SelectTimePage extends ConsumerStatefulWidget {
   const SelectTimePage({Key key}) : super(key: key);
@@ -70,8 +70,8 @@ class _SelectTimePageState extends ConsumerState<SelectTimePage> {
     );
   }
 
-  SlideToGetStartedWidget slider(BuildContext context) {
-    return SlideToGetStartedWidget(
+  SlideToBookLunchWidget slider(BuildContext context) {
+    return SlideToBookLunchWidget(
       key: Key('slide-to-get-started-widget'),
       onConfirm: () {
         ref.read(ingredientsProvider.notifier).getIngredients(

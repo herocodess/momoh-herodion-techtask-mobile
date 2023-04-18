@@ -3,9 +3,9 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:riverpod/riverpod.dart';
-import 'package:tech_task/app/modules/ingredients/domain/ingredients_repository.dart';
-import 'package:tech_task/app/modules/ingredients/domain/ingredients_repository_impl.dart';
-import 'package:tech_task/app/shared/models/ingredients_model.dart';
+import 'package:recipe_app/app/modules/ingredients/domain/ingredients_repository.dart';
+import 'package:recipe_app/app/modules/ingredients/domain/ingredients_repository_impl.dart';
+import 'package:recipe_app/app/shared/models/ingredients_model.dart';
 
 final ingredientsProvider = StateNotifierProvider<IngredientsProvider,
     AsyncValue<List<IngredientsModel>>>(

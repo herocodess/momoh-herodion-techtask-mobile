@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tech_task/app/modules/recipe/domain/recipe_repository.dart';
-import 'package:tech_task/app/modules/recipe/domain/recipe_repository_impl.dart';
-import 'package:tech_task/app/shared/models/recipe_model.dart';
+import 'package:recipe_app/app/modules/recipe/domain/recipe_repository.dart';
+import 'package:recipe_app/app/modules/recipe/domain/recipe_repository_impl.dart';
+import 'package:recipe_app/app/shared/models/recipe_model.dart';
 
 final recipeProvider =
     StateNotifierProvider<RecipeProvider, AsyncValue<List<RecipeModel>>>((ref) {

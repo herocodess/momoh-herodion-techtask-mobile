@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tech_task/app/shared/helpers/color_constants.dart';
-import 'package:tech_task/app/shared/theme.dart';
+import 'package:recipe_app/app/shared/helpers/color_constants.dart';
+import 'package:recipe_app/app/shared/theme.dart';
 
 class RecipeIngredientWidget extends StatelessWidget {
   final String title;

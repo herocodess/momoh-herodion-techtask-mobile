@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tech_task/app/modules/providers/recipe_provider.dart';
-import 'package:tech_task/app/modules/recipe/presentation/recipe_list_page.dart';
-import 'package:tech_task/app/shared/helpers/color_constants.dart';
-import 'package:tech_task/app/shared/models/ingredients_model.dart';
-import 'package:tech_task/core/navigation/navigation.dart';
-import 'package:tech_task/app/shared/widgets/continue_button_widget.dart';
+import 'package:recipe_app/app/modules/providers/recipe_provider.dart';
+import 'package:recipe_app/app/modules/recipe/presentation/recipe_list_page.dart';
+import 'package:recipe_app/app/shared/helpers/color_constants.dart';
+import 'package:recipe_app/app/shared/models/ingredients_model.dart';
+import 'package:recipe_app/core/navigation/navigation.dart';
+import 'package:recipe_app/app/shared/widgets/continue_button_widget.dart';
 
 class IngredientsPage extends ConsumerStatefulWidget {
   const IngredientsPage({Key key, this.ingredients}) : super(key: key);
