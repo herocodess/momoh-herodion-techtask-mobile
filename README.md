@@ -1,10 +1,14 @@
 __Language :__ English | [Bahasa Indonesia](README_ID.md)
+# Recipe App
 
-## Getting Started with Flutter
+### Run Tests
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter test integration_test/app_test.dart -d <device_id> 
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Run App
 
-For help getting started with Flutter, view [online documentation](https://flutter.dev/docs), which offers tutorials, samples, guidance on mobile development, and a full API reference.
+```bash
+flutter run 
+```
